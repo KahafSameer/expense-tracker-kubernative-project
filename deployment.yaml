@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-tracker-kubernative-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expense-tracker-kubernative-project
+  template:
+    metadata:
+      labels:
+        app: expense-tracker-kubernative-project
+    spec:
+      containers:
+      - name: expense-tracker
+        image: kahafsameer/expense-tracker-kubernative-project:latest
+        ports:
+        - containerPort: 4000
